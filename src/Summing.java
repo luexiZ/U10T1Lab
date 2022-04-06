@@ -1,18 +1,18 @@
 public class Summing
 {
-    public static void main(String[] args)
+    public static void main(String [] args)
     {
-        System.out.println(sum(6));  // should print 21
-        System.out.println(sum(10)); // should print 55
+        int someNum = mystery(9, 2);
+        System.out.println(someNum);
     }
 
-    public static int sum(int n)
+    public static int mystery(int m, int n)
     {
-        if(n < 1)
+        if (m <= 0)
         {
-            return 0;
+            return n; // BASE CASE (doesn't involve a recursive call)
         }
-        int result = n + sum(n-1);
-        return result;
+        return n * mystery(m - 2, n + 1);
     }
+
 }
